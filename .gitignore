@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+/build
+/compile_templates
+/steam/output
+/steam/content
+
+*.png~
+*.kra~
+*.autosave.kra
