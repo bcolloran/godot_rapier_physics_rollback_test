@@ -9,9 +9,7 @@ var _rapier_bytes := PackedByteArray()
 @onready var _space_rid := get_viewport().world_3d.space
 @onready var _fixed_delta: float = 1.0 / ProjectSettings.get_setting("physics/common/physics_ticks_per_second")
 
-
 func _ready() -> void:
-  print("SimStateContext ready")
   PhysicsServer3D.space_set_active(get_viewport().world_3d.space, false)
   SimStateContext.initial_snapshot()
 
@@ -44,5 +42,4 @@ func restore_last_snapshot() -> int:
   return _last_snapshot_tick
 
 func register_sim_entity(entity: Node) -> void:
-  print("registering entity: ", entity)
   _entities[entity.get_instance_id()] = entity
